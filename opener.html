@@ -1,0 +1,44 @@
+<html>
+<head>
+  <title></title>
+  <style>
+    .btn1 {
+      background: rgb(220, 120, 50);
+      border: none;
+      outline: none;
+      color: #fff;
+      padding: 10px 25px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .btn2 {
+      display: block;
+      margin-top: 20px;
+      background: rgb(10, 177, 17);
+      border: none;
+      outline: none;
+      color: #fff;
+      padding: 10px 25px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="open1()" class="btn1">测试：打开新标签页，此页面将被导航到其它页面</button>
+
+  <button onclick="open2()" class="btn2">测试：打开新标签页，此页面正常</button>
+<script type="text/javascript">
+  function open1 () {
+    var newTab = window.open();
+    newTab.location = './opener2.html';
+  }
+
+  function open2 () {
+    var newTab = window.open();
+    newTab.opener = null;
+    newTab.location = './opener2.html';
+  }
+</script>
+</body>
+</html>

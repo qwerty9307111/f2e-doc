@@ -1,0 +1,42 @@
+{
+  "name": "git-books",
+  "version": "1.0.0",
+  "description": "123",
+  "main": "index.js",
+  "scripts": {
+    "serve": "gitbook serve",
+    "watch": "onchange -i \"**/*.md\" \"**/*.less\" -- sh serve.sh",
+    "publish": "sh deploy-doc.sh"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gitbook": "^2.6.9",
+    "gitbook-plugin-advanced-emoji": "^0.2.2",
+    "gitbook-plugin-autotheme": "^1.0.1",
+    "gitbook-plugin-back-to-top-button": "^0.1.4",
+    "gitbook-plugin-book-summary-scroll-position-saver": "0.0.7",
+    "gitbook-plugin-change_girls": "^2.2.1",
+    "gitbook-plugin-chapter-fold": "0.0.4",
+    "gitbook-plugin-code": "^0.1.0",
+    "gitbook-plugin-codeblock-filename": "0.0.9",
+    "gitbook-plugin-copy-code-button": "0.0.2",
+    "gitbook-plugin-donate": "^1.0.2",
+    "gitbook-plugin-expandable-chapters-small": "^0.1.7",
+    "gitbook-plugin-fbqx": "^1.0.0",
+    "gitbook-plugin-github": "^3.0.0",
+    "gitbook-plugin-multipart": "^0.3.0",
+    "gitbook-plugin-prism": "^2.4.0",
+    "gitbook-plugin-search-pro": "^2.0.2",
+    "gitbook-plugin-sharing-plus": "0.0.2",
+    "gitbook-plugin-splitter": "0.0.8",
+    "gitbook-plugin-spoiler": "0.0.2",
+    "gitbook-plugin-tbfed-pagefooter": "0.0.1",
+    "gitbook-plugin-theme-comscore": "0.0.3",
+    "gitbook-plugin-toggle-chapters": "0.0.3"
+  },
+  "devDependencies": {
+    "gitbook-cli": "^2.3.2",
+    "onchange": "^7.1.0"
+  }
+}

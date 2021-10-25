@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {margin:0;padding:0}
+    li {min-height: 200px}
+  </style>
+</head>
+<body>
+  <ul>
+    <li>
+      <img data-src="https://avatars.githubusercontent.com/u/25604284?v=4">
+    </li>
+    <li>
+      <img data-src="https://avatars.githubusercontent.com/u/25604285?v=4">
+    </li>
+    <li>
+      <img data-src="https://avatars.githubusercontent.com/u/25604286?v=4">
+    </li>
+    <li>
+      <img data-src="https://avatars.githubusercontent.com/u/25604287?v=4">
+    </li>
+    <li>
+      <img data-src="https://avatars.githubusercontent.com/u/25604288?v=4">
+    </li>
+    <li>
+      <img data-src="https://avatars.githubusercontent.com/u/25604289?v=4">
+    </li>
+    <li>
+      <img data-src="https://avatars.githubusercontent.com/u/25604280?v=4">
+    </li>
+    <li>
+      <img data-src="https://avatars.githubusercontent.com/u/25604281?v=4">
+    </li>
+    <li>
+      <img data-src="https://avatars.githubusercontent.com/u/25604282?v=4">
+    </li>
+    <li>
+      <img data-src="https://avatars.githubusercontent.com/u/25604283?v=4">
+    </li>
+    <li>
+      <img data-src="https://avatars.githubusercontent.com/u/25604290?v=4">
+    </li>
+    <li>
+      <img data-src="https://avatars.githubusercontent.com/u/25604291?v=4">
+    </li>
+    <li>
+      <img data-src="https://avatars.githubusercontent.com/u/25604292?v=4">
+    </li>
+    <li>
+      <img data-src="https://avatars.githubusercontent.com/u/25604293?v=4">
+    </li>
+    <li>
+      <img data-src="https://avatars.githubusercontent.com/u/25604294?v=4">
+    </li>
+    <li>
+      <img data-src="https://avatars.githubusercontent.com/u/25604295?v=4">
+    </li>
+    <li>
+      <img data-src="https://avatars.githubusercontent.com/u/25604296?v=4">
+    </li>
+    <li>
+      <img data-src="https://avatars.githubusercontent.com/u/25604297?v=4">
+    </li>
+    <li>
+      <img data-src="https://avatars.githubusercontent.com/u/25604298?v=4">
+    </li>
+    <li>
+      <img data-src="https://avatars.githubusercontent.com/u/25604299?v=4">
+    </li>
+    <li>
+      <img data-src="https://avatars.githubusercontent.com/u/25604201?v=4">
+    </li>
+    <li>
+      <img data-src="https://avatars.githubusercontent.com/u/25604202?v=4">
+    </li>
+    <li>
+      <img data-src="https://avatars.githubusercontent.com/u/25604203?v=4">
+    </li>
+    <li>
+      <img data-src="https://avatars.githubusercontent.com/u/25604204?v=4">
+    </li>
+    <li>
+      <img data-src="https://avatars.githubusercontent.com/u/25604205?v=4">
+    </li>
+    <li>
+      <img data-src="https://avatars.githubusercontent.com/u/25604206?v=4">
+    </li>
+    <li>
+      <img data-src="https://avatars.githubusercontent.com/u/25604207?v=4">
+    </li>
+    <li>
+      <img data-src="https://avatars.githubusercontent.com/u/25604208?v=4">
+    </li>
+    <li>
+      <img data-src="https://avatars.githubusercontent.com/u/25604209?v=4">
+    </li>
+  </ul>
+</body>
+<script>
+// 创建配置对象
+const config = {
+  rootMargin: '0px 0px 50px 0px', // 根(root)元素的外边距。类似于 CSS 中的 margin 属性
+  threshold: 0 // target 元素和 root 元素相交程度达到该值的时候 IntersectionObserver 注册的回调函数将会被执行。
+};
+
+// 向 IntersectionObserver 实例注册配置对象
+const observer = new IntersectionObserver(function(entries, self) {
+  // 迭代
+  entries.forEach(entry => {
+    // 只处理相交的图像
+    // 如果 isIntersecting 为真，target 元素的至少已经达到 thresholds 属性值当中规定的其中一个阈值
+    // 如果为假，则 target 元素不在给定的阈值范围内可见。
+    if (entry.isIntersecting) {
+      // 将 target 的 data-src 属性值赋值给 src
+      entry.target.src = entry.target.dataset.src
+      // 图片加载完成，停止监听
+      self.unobserve(entry.target);
+    }
+  });
+}, config);
+
+const images = document.querySelectorAll('[data-src]');
+images.forEach(img => {
+  observer.observe(img);
+});
+</script>
+</html>
